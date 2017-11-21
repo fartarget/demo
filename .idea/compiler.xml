@@ -14,10 +14,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="study-portal" target="1.8" />
-      <module name="studycommon" target="1.5" />
-      <module name="studymodel" target="1.5" />
-      <module name="studyparent" target="1.5" />
-      <module name="studyservice" target="1.5" />
+      <module name="studycommon" target="1.6" />
+      <module name="studymodel" target="1.6" />
+      <module name="studyparent" target="1.6" />
+      <module name="studyservice" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
