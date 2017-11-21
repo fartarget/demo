@@ -12,6 +12,7 @@
         <module>studymodel</module>
         <module>studycommon</module>
         <module>studyservice</module>
+        <module>study-portal</module>
     </modules>
 
 
