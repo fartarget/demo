@@ -26,7 +26,7 @@ public class IndexController {
 
     @GetMapping("list")
     public  String list(){
-        List<TbUser> list=userService.getAllUser();
+        List<TbUser> list=userService.getByUserId(1);
         return  list.toString();
     }
 }

@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository repository;
     @Override
-    public List<TbUser> getAllUser() {
-        return repository.findAllUser();
+    public List<TbUser> getByUserId(Integer userID) {
+        return repository.findByUserId(userID);
     }
 }

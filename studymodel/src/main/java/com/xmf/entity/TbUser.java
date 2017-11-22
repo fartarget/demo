@@ -1,11 +1,17 @@
 package com.xmf.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by dell on 2017/11/21.
  */
-
+@Entity
 public class TbUser {
 
+    @Id
+    @GeneratedValue
     private  Integer userId;
     private  String userName;
     private  String password;

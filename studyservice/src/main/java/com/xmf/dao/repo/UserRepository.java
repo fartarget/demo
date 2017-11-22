@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by dell on 2017/11/21.
  */
-public interface UserRepository extends JpaRepository<UserRepository,Integer>{
-       List<TbUser> findAllUser();
+public interface UserRepository extends JpaRepository<TbUser,Integer>{
+       List<TbUser> findByUserId(Integer userId);
 }
