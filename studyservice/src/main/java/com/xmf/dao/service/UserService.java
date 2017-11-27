@@ -11,5 +11,5 @@ import java.util.List;
  */
 
 public interface UserService {
-    List<TbUser> getByUserId(Integer userID);
+    TbUser getByUserId(Integer userID);
 }
