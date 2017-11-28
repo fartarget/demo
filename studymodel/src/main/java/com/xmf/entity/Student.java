@@ -26,13 +26,23 @@ public class Student extends  BaseEntity{
 
     private  Integer classId;
 
-    private  Integer status; //1 表示在读 0 表示离校
+    private  Integer status;
+
+    private  Integer isIn;  //是否在校 1 表示在 0 表示离校
 
     private String studentCardNum;
 
     private  String headImg;
 
     public Student() {
+    }
+
+    public Integer getIsIn() {
+        return isIn;
+    }
+
+    public void setIsIn(Integer isIn) {
+        this.isIn = isIn;
     }
 
     public Integer getStudentId() {
