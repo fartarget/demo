@@ -19,7 +19,6 @@ public class BaseEntity {
 
     private  String memo;
 
-
     public Date getCreateTime() {
         return createTime;
     }

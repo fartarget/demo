@@ -3,11 +3,13 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
  */
 @Entity
+@Table(name="tb_sys_dict")
 public class SysDict extends  BaseEntity{
 
     @Id
@@ -17,9 +19,6 @@ public class SysDict extends  BaseEntity{
     private  String dictName;
 
     private  String content;
-
-    public SysDict() {
-    }
 
     public Integer getId() {
         return id;

@@ -3,12 +3,14 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/21.
  */
 @Entity
-public class TbUser extends BaseEntity{
+@Table(name="tb_user")
+public class User extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -28,7 +30,7 @@ public class TbUser extends BaseEntity{
 
     private  Integer status;
 
-    public TbUser() {
+    public User() {
     }
 
     public Integer getUserId() {

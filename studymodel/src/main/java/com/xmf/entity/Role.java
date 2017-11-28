@@ -3,6 +3,7 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
@@ -12,7 +13,8 @@ import javax.persistence.Id;
  * 角色表
  */
 @Entity
-public class TbRole extends  BaseEntity{
+@Table(name="tb_role")
+public class Role extends  BaseEntity{
 
     @Id
     @GeneratedValue
@@ -22,7 +24,7 @@ public class TbRole extends  BaseEntity{
 
     private  String keyName;
 
-    public TbRole() {
+    public Role() {
     }
 
     public Integer getRoleId() {

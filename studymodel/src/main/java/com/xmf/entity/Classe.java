@@ -3,6 +3,7 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
@@ -12,7 +13,8 @@ import javax.persistence.Id;
  * 班级表
  */
 @Entity
-public class TbClass extends BaseEntity{
+@Table(name="tb_class")
+public class Classe extends BaseEntity{
     @Id
     @GeneratedValue
     private  Integer classId;
@@ -21,7 +23,7 @@ public class TbClass extends BaseEntity{
 
     private  Integer classPid;
 
-    public TbClass() {
+    public Classe() {
     }
 
     public Integer getClassId() {

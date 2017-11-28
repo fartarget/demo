@@ -1,15 +1,13 @@
 package com.xmf.dao.service;
 
-import com.xmf.entity.TbUser;
-import org.springframework.stereotype.Service;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.List;
+import com.xmf.entity.User;
 
 /**
  * Created by dell on 2017/11/21.
  */
 
 public interface UserService {
-    TbUser getByUserId(Integer userID);
+    User getByUserId(Integer userID);
+
+    User save(User tbUser);
 }

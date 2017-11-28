@@ -3,12 +3,14 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
  */
 @Entity
-public class TbRoleFolder extends BaseEntity{
+@Table(name="tb_role_folder")
+public class RoleFolder extends BaseEntity{
     @Id
     @GeneratedValue
     private  Integer id;
@@ -17,7 +19,7 @@ public class TbRoleFolder extends BaseEntity{
 
     private   Integer roleId;
 
-    public TbRoleFolder() {
+    public RoleFolder() {
     }
 
     public Integer getId() {

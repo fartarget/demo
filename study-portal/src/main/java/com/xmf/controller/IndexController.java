@@ -1,13 +1,11 @@
 package com.xmf.controller;
 
 import com.xmf.dao.service.UserService;
-import com.xmf.entity.TbUser;
+import com.xmf.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Created by dell on 2017/11/21.
@@ -26,7 +24,7 @@ public class IndexController {
 
     @GetMapping("list")
     public  String list(){
-        TbUser tbUser=userService.getByUserId(1);
+        User tbUser=userService.getByUserId(1);
         return  tbUser.toString();
     }
 }

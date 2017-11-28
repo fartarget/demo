@@ -3,21 +3,28 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
  */
+
+/**
+ * 用户角色
+ */
 @Entity
-public class TbClassUser extends  BaseEntity{
+@Table(name="tb_user_role")
+public class UserRole extends  BaseEntity{
+
     @Id
     @GeneratedValue
     private  Integer id;
 
     private  Integer userId;
 
-    private  Integer classId;
+    private  Integer roleId;
 
-    public TbClassUser() {
+    public UserRole() {
     }
 
     public Integer getId() {
@@ -36,11 +43,11 @@ public class TbClassUser extends  BaseEntity{
         this.userId = userId;
     }
 
-    public Integer getClassId() {
-        return classId;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setClassId(Integer classId) {
-        this.classId = classId;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

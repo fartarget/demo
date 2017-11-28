@@ -3,12 +3,14 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
  */
 @Entity
-public class TbScore extends  BaseEntity{
+@Table(name="tb_score")
+public class Score extends  BaseEntity{
 
     @Id
     @GeneratedValue
@@ -22,7 +24,7 @@ public class TbScore extends  BaseEntity{
 
     private  Integer classId;
 
-    public TbScore() {
+    public Score() {
     }
 
     public Integer getId() {

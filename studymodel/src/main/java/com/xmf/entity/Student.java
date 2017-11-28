@@ -10,7 +10,8 @@ import javax.persistence.*;
  * 学生表
  */
 @Entity
-public class TbStudent extends  BaseEntity{
+@Table(name="tb_student")
+public class Student extends  BaseEntity{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private  Integer studentId;
@@ -31,7 +32,7 @@ public class TbStudent extends  BaseEntity{
 
     private  String headImg;
 
-    public TbStudent() {
+    public Student() {
     }
 
     public Integer getStudentId() {

@@ -3,12 +3,14 @@ package com.xmf.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by dell on 2017/11/27.
  */
 @Entity
-public class TbFolder extends BaseEntity{
+@Table(name="tb_folder")
+public class Folder extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -26,7 +28,7 @@ public class TbFolder extends BaseEntity{
 
     private  Integer status;
 
-    public TbFolder() {
+    public Folder() {
     }
 
     public Integer getFolderId() {
