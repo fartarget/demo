@@ -10,7 +10,6 @@ import javax.persistence.*;
  * 学生表
  */
 @Entity
-@Table(name="t_student")
 public class TbStudent extends  BaseEntity{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
