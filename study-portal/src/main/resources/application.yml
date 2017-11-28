@@ -1,19 +1,21 @@
 spring:
-   profiles:
-     active: dev
-jpa:
-    database: mysql
+  profiles:
+    active: dev
+  session:
+    store-type: none
+  jpa:
     show-sql: true
+    database: mysql
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 ---
 spring:
     profiles: dev
     datasource:
        type: com.alibaba.druid.pool.DruidDataSource
-       url: jdbc:mysql://localhost:3306/sell?characterEncoding=utf-8
+       url: jdbc:mysql://localhost:3306/student?characterEncoding=utf-8
        username: root
-       password: 123456
+       password:
        driver-class-name: com.mysql.jdbc.Driver
        # 初始化大小，最小，最大
        druid:

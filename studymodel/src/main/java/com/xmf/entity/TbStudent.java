@@ -1,6 +1,6 @@
 package com.xmf.entity;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
  * Created by dell on 2017/11/27.
@@ -10,7 +10,10 @@ import javax.persistence.Entity;
  * 学生表
  */
 @Entity
+@Table(name="t_student")
 public class TbStudent extends  BaseEntity{
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private  Integer studentId;
 
     private  String studentCode;
