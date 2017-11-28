@@ -3,6 +3,12 @@ spring:
     active: dev
   session:
     store-type: none
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
   jpa:
     show-sql: true
     database: mysql
