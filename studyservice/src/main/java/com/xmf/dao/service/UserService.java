@@ -9,5 +9,5 @@ import com.xmf.entity.User;
 public interface UserService {
     User getByUserId(Integer userID);
 
-    User save(User tbUser);
+    User save(User user);
 }

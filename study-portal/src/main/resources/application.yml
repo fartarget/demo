@@ -12,6 +12,8 @@ spring:
   jpa:
     show-sql: true
     database: mysql
+logging:
+  path: e:\log\mylog
 ---
 spring:
     profiles: dev
@@ -19,7 +21,7 @@ spring:
        type: com.alibaba.druid.pool.DruidDataSource
        url: jdbc:mysql://118.31.79.89:3306/student?characterEncoding=utf-8
        username: root
-       password:
+       password: admin_123456
        driver-class-name: com.mysql.jdbc.Driver
        # 初始化大小，最小，最大
        druid:
