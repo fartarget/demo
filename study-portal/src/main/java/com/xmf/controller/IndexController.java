@@ -22,9 +22,9 @@ public class IndexController {
         return "hello  world";
     }
 
-    @GetMapping("list")
+    /*@GetMapping("list")
     public  String list(){
         User tbUser=userService.getByUserId(1);
         return  tbUser.toString();
-    }
+    }*/
 }

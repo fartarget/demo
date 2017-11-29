@@ -17,15 +17,6 @@ public class StudyPortalApplication {
 		SpringApplication.run(StudyPortalApplication.class, args);
 	}
 
-	/**
-	 * 注入sessionfatory
-	 * @return
-	 */
-    @Bean
-    public SessionFactory sessionFactory(@Qualifier("entityManagerFactory") EntityManagerFactory emf) {
-        return emf.unwrap(SessionFactory.class);
-    }
-
 }
 
 

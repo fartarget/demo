@@ -6,20 +6,33 @@ import com.xmf.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by dell on 2017/11/21.
  */
-@Service
+@Service("UserService")
 public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserRepository repository;
+
+   /* @Autowired
+    private UserDao userDao;
+*/
+
     @Override
     public User getByUserId(Integer userID) {
-        return repository.findByUserId(userID);
+        return null;
     }
 
-    public User save(User user){
-        return repository.save(user);
+    @Override
+    public User save(User tbUser) {
+        return null;
+    }
+
+    @Override
+    public List<User> findAll() {
+        return null;
     }
 }
