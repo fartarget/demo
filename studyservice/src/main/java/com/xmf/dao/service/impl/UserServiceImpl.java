@@ -1,6 +1,5 @@
 package com.xmf.dao.service.impl;
 
-import com.xmf.dao.UserDao;
 import com.xmf.dao.repo.UserRepository;
 import com.xmf.dao.service.UserService;
 import com.xmf.entity.User;
