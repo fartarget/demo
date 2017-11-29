@@ -19,10 +19,10 @@ public class StudyPortalApplicationTests {
 	@Autowired
 	private UserService userService;
 
-	@Test
+	/*@Test
 	public void contextLoads() {
 		User tbUser=userService.getByUserId(1);
 		logger.info(tbUser.getUserName());
-	}
+	}*/
 
 }
