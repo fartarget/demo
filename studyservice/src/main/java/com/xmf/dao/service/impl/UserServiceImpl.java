@@ -1,5 +1,6 @@
 package com.xmf.dao.service.impl;
 
+import com.xmf.dao.UserMapper;
 import com.xmf.dao.repo.UserRepository;
 import com.xmf.dao.service.UserService;
 import com.xmf.entity.User;
@@ -14,8 +15,11 @@ import java.util.List;
 @Service("UserService")
 public class UserServiceImpl implements UserService{
 
+    //@Autowired
+   // private UserRepository repository;
+
     @Autowired
-    private UserRepository repository;
+    private UserMapper userMapper;
 
    /* @Autowired
     private UserDao userDao;
@@ -23,7 +27,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getByUserId(Integer userID) {
-        return null;
+         return  userMapper.findUserById(userID);
+
     }
 
     @Override
@@ -31,8 +36,4 @@ public class UserServiceImpl implements UserService{
         return null;
     }
 
-    @Override
-    public List<User> findAll() {
-        return null;
-    }
 }
