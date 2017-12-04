@@ -1,9 +1,12 @@
 package com.xmf.hibernate.basedao;
 
+import com.xmf.config.HibernateSessionFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -11,46 +14,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Map.Entry;
 @Repository
-public class BaseDaoImpl<T> implements BaseDao<T> {
-
-    protected Class<T> entityClazz;
-
-    protected SessionFactory sessionFactory;
-
-    @SuppressWarnings("unchecked")
-    public BaseDaoImpl() {
-        Type type = getClass().getGenericSuperclass();
-        if (type instanceof ParameterizedType) {
-            this.entityClazz = (Class<T>) ((ParameterizedType) type).getActualTypeArguments()[0];
-        } else {
-            this.entityClazz = null;
-        }
-    }
-
-    @Resource
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    protected Session getSession() {
-        return sessionFactory.getCurrentSession();
-    }
-
-    /**
-     * 单表单条记录查询
-     * @param clazz
-     * @param varables
-     * @return
-     */
-    public <T> T querySingleResult(Class<T> clazz, Map<String, Object> varables){
-        Session session = sessionFactory.getCurrentSession();
-        Transaction transaction = session.beginTransaction();
-        Query query = selectStatement(clazz, varables, session);
-        return (T) query.uniqueResult();
-    }
-
+public class QueryTable extends HibernateSessionFactory{
+//
     /**
      * 单表多条记录查询
      * @param className 要查询的对象
@@ -58,7 +25,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
      * @return 返回查询结果的List集合
      */
     public <T> List<T> queryResultList(Class<T> className, Map<String,Object> varables){
-        Session session = sessionFactory.getCurrentSession();
+        Session session = this.getSession();
         Transaction transaction = session.beginTransaction();
         List<T> valueList = selectStatement(className, varables, session).list();
         transaction.commit();
@@ -77,12 +44,12 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         /*
          * 通过className得到该实体类的字符串形式,
          */
-        stringBuilder.append("from " + sessionFactory.getClassMetadata(className).getEntityName());
+        stringBuilder.append("from " + this.getSessionFactory().getClassMetadata(className).getEntityName());
         stringBuilder.append(" where 1=1 ");
         /*
          * 动态的拼接sql语句,如果一个属性的值为"", 则不往条件中添加.
          */
-        for(Map.Entry<String, Object> entry : varables.entrySet()){
+        for(Entry<String, Object> entry : varables.entrySet()){
             if(!entry.getValue().equals("")){
                 stringBuilder.append(" and " + entry.getKey()+"=:" + entry.getKey());
             }
@@ -92,12 +59,11 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         /*
          * 动态的给条件赋值
          */
-        for(Map.Entry<String, Object> entry : varables.entrySet()){
+        for(Entry<String, Object> entry : varables.entrySet()){
             if(!entry.getValue().equals("")){
                 query.setParameter(entry.getKey(), entry.getValue());
             }
         }
         return query;
     }
-
 }
