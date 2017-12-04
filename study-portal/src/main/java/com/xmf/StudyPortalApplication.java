@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan
-@MapperScan("com.xmf.entity")
+@MapperScan("com.xmf.dao")
 public class StudyPortalApplication {
 
 	public static void main(String[] args) {
