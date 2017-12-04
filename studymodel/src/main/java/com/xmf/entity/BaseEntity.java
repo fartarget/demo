@@ -1,7 +1,5 @@
 package com.xmf.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.Date;
 
 /**

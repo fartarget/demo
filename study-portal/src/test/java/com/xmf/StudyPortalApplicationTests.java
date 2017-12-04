@@ -1,6 +1,5 @@
 package com.xmf;
 
-import com.xmf.dao.service.UserService;
 import com.xmf.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,15 +13,5 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class StudyPortalApplicationTests {
 
-	private static Logger logger= LoggerFactory.getLogger(StudyPortalApplicationTests.class);
-
-	@Autowired
-	private UserService userService;
-
-	@Test
-	public void contextLoads() {
-		User tbUser=userService.getByUserId(1);
-		logger.info(tbUser.getUserName());
-	}
 
 }

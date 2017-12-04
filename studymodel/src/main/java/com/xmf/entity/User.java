@@ -1,52 +1,51 @@
 package com.xmf.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class User {
 
-/**
- * Created by dell on 2017/11/21.
- */
-@Entity
-@Table(name="tb_user")
-public class User extends BaseEntity{
+    private int userId;
 
-    @Id
-    @GeneratedValue
-    private  Integer userId;
+    private String headImg;
 
-    private  String userName;
+    private String password;
 
-    private  String password;
+    private String realName;
 
-    private  String realName;
+    private int sex;
 
-    private  String userTel;
+    private int status;
 
-    private  Integer sex;
+    private String userName;
 
-    private  String headImg;
+    private String userTel;
 
-    private  Integer status;
+    private String createTime;
 
-    public User() {
-    }
+    private String updateTime;
 
-    public Integer getUserId() {
+    private int createId;
+
+    private String createName;
+
+    private int updateId;
+
+    private String updateName;
+
+    private String memo;
+
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getHeadImg() {
+        return headImg;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
     }
 
     public String getPassword() {
@@ -65,6 +64,30 @@ public class User extends BaseEntity{
         this.realName = realName;
     }
 
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getUserTel() {
         return userTel;
     }
@@ -73,27 +96,59 @@ public class User extends BaseEntity{
         this.userTel = userTel;
     }
 
-    public Integer getSex() {
-        return sex;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setSex(Integer sex) {
-        this.sex = sex;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
-    public String getHeadImg() {
-        return headImg;
+    public String getUpdateTime() {
+        return updateTime;
     }
 
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Integer getStatus() {
-        return status;
+    public int getCreateId() {
+        return createId;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setCreateId(int createId) {
+        this.createId = createId;
+    }
+
+    public String getCreateName() {
+        return createName;
+    }
+
+    public void setCreateName(String createName) {
+        this.createName = createName;
+    }
+
+    public int getUpdateId() {
+        return updateId;
+    }
+
+    public void setUpdateId(int updateId) {
+        this.updateId = updateId;
+    }
+
+    public String getUpdateName() {
+        return updateName;
+    }
+
+    public void setUpdateName(String updateName) {
+        this.updateName = updateName;
+    }
+
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
     }
 }
