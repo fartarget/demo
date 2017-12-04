@@ -6,28 +6,25 @@ import java.util.Date;
 /**
  * @author 
  */
-public class User implements Serializable {
-    private Integer userId;
+public class Folder implements Serializable {
+    private Integer folderId;
 
     /**
-     * 头像
+     * 权限(菜单)名称
      */
-    private String headImg;
+    private String folderName;
+
+    private String keyName;
 
     /**
-     * 密码
+     * 父ID
      */
-    private String password;
+    private Integer parentId;
 
     /**
-     * 真实姓名
+     * 排序
      */
-    private String realName;
-
-    /**
-     * 性别 1:男 2:女
-     */
-    private Boolean sex;
+    private Integer sort;
 
     /**
      * 状态 0:删除 1:锁定 2:正常
@@ -35,14 +32,9 @@ public class User implements Serializable {
     private Boolean status;
 
     /**
-     * 用户名
+     * 地址
      */
-    private String userName;
-
-    /**
-     * 联系电话
-     */
-    private String userTel;
+    private String url;
 
     /**
      * 添加时间
@@ -81,44 +73,44 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getFolderId() {
+        return folderId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setFolderId(Integer folderId) {
+        this.folderId = folderId;
     }
 
-    public String getHeadImg() {
-        return headImg;
+    public String getFolderName() {
+        return folderName;
     }
 
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg;
+    public void setFolderName(String folderName) {
+        this.folderName = folderName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getKeyName() {
+        return keyName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
     }
 
-    public String getRealName() {
-        return realName;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
-    public Boolean getSex() {
-        return sex;
+    public Integer getSort() {
+        return sort;
     }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 
     public Boolean getStatus() {
@@ -129,20 +121,12 @@ public class User implements Serializable {
         this.status = status;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserTel() {
-        return userTel;
-    }
-
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Date getCreateTime() {
@@ -212,15 +196,14 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
-        return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getHeadImg() == null ? other.getHeadImg() == null : this.getHeadImg().equals(other.getHeadImg()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
-            && (this.getSex() == null ? other.getSex() == null : this.getSex().equals(other.getSex()))
+        Folder other = (Folder) that;
+        return (this.getFolderId() == null ? other.getFolderId() == null : this.getFolderId().equals(other.getFolderId()))
+            && (this.getFolderName() == null ? other.getFolderName() == null : this.getFolderName().equals(other.getFolderName()))
+            && (this.getKeyName() == null ? other.getKeyName() == null : this.getKeyName().equals(other.getKeyName()))
+            && (this.getParentId() == null ? other.getParentId() == null : this.getParentId().equals(other.getParentId()))
+            && (this.getSort() == null ? other.getSort() == null : this.getSort().equals(other.getSort()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
-            && (this.getUserTel() == null ? other.getUserTel() == null : this.getUserTel().equals(other.getUserTel()))
+            && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getCreateId() == null ? other.getCreateId() == null : this.getCreateId().equals(other.getCreateId()))
@@ -234,14 +217,13 @@ public class User implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getHeadImg() == null) ? 0 : getHeadImg().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
-        result = prime * result + ((getSex() == null) ? 0 : getSex().hashCode());
+        result = prime * result + ((getFolderId() == null) ? 0 : getFolderId().hashCode());
+        result = prime * result + ((getFolderName() == null) ? 0 : getFolderName().hashCode());
+        result = prime * result + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        result = prime * result + ((getParentId() == null) ? 0 : getParentId().hashCode());
+        result = prime * result + ((getSort() == null) ? 0 : getSort().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        result = prime * result + ((getUserTel() == null) ? 0 : getUserTel().hashCode());
+        result = prime * result + ((getUrl() == null) ? 0 : getUrl().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getCreateId() == null) ? 0 : getCreateId().hashCode());
@@ -258,14 +240,13 @@ public class User implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", userId=").append(userId);
-        sb.append(", headImg=").append(headImg);
-        sb.append(", password=").append(password);
-        sb.append(", realName=").append(realName);
-        sb.append(", sex=").append(sex);
+        sb.append(", folderId=").append(folderId);
+        sb.append(", folderName=").append(folderName);
+        sb.append(", keyName=").append(keyName);
+        sb.append(", parentId=").append(parentId);
+        sb.append(", sort=").append(sort);
         sb.append(", status=").append(status);
-        sb.append(", userName=").append(userName);
-        sb.append(", userTel=").append(userTel);
+        sb.append(", url=").append(url);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", createId=").append(createId);

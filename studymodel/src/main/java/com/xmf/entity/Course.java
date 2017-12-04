@@ -6,43 +6,18 @@ import java.util.Date;
 /**
  * @author 
  */
-public class User implements Serializable {
-    private Integer userId;
+public class Course implements Serializable {
+    private Integer courseId;
 
     /**
-     * 头像
+     * 课程名称
      */
-    private String headImg;
-
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 真实姓名
-     */
-    private String realName;
-
-    /**
-     * 性别 1:男 2:女
-     */
-    private Boolean sex;
+    private String courseName;
 
     /**
      * 状态 0:删除 1:锁定 2:正常
      */
     private Boolean status;
-
-    /**
-     * 用户名
-     */
-    private String userName;
-
-    /**
-     * 联系电话
-     */
-    private String userTel;
 
     /**
      * 添加时间
@@ -81,44 +56,20 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
-    public String getHeadImg() {
-        return headImg;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public Boolean getSex() {
-        return sex;
-    }
-
-    public void setSex(Boolean sex) {
-        this.sex = sex;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public Boolean getStatus() {
@@ -127,22 +78,6 @@ public class User implements Serializable {
 
     public void setStatus(Boolean status) {
         this.status = status;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserTel() {
-        return userTel;
-    }
-
-    public void setUserTel(String userTel) {
-        this.userTel = userTel;
     }
 
     public Date getCreateTime() {
@@ -212,15 +147,10 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
-        return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getHeadImg() == null ? other.getHeadImg() == null : this.getHeadImg().equals(other.getHeadImg()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
-            && (this.getSex() == null ? other.getSex() == null : this.getSex().equals(other.getSex()))
+        Course other = (Course) that;
+        return (this.getCourseId() == null ? other.getCourseId() == null : this.getCourseId().equals(other.getCourseId()))
+            && (this.getCourseName() == null ? other.getCourseName() == null : this.getCourseName().equals(other.getCourseName()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
-            && (this.getUserTel() == null ? other.getUserTel() == null : this.getUserTel().equals(other.getUserTel()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getCreateId() == null ? other.getCreateId() == null : this.getCreateId().equals(other.getCreateId()))
@@ -234,14 +164,9 @@ public class User implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getHeadImg() == null) ? 0 : getHeadImg().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
-        result = prime * result + ((getSex() == null) ? 0 : getSex().hashCode());
+        result = prime * result + ((getCourseId() == null) ? 0 : getCourseId().hashCode());
+        result = prime * result + ((getCourseName() == null) ? 0 : getCourseName().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        result = prime * result + ((getUserTel() == null) ? 0 : getUserTel().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getCreateId() == null) ? 0 : getCreateId().hashCode());
@@ -258,14 +183,9 @@ public class User implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", userId=").append(userId);
-        sb.append(", headImg=").append(headImg);
-        sb.append(", password=").append(password);
-        sb.append(", realName=").append(realName);
-        sb.append(", sex=").append(sex);
+        sb.append(", courseId=").append(courseId);
+        sb.append(", courseName=").append(courseName);
         sb.append(", status=").append(status);
-        sb.append(", userName=").append(userName);
-        sb.append(", userTel=").append(userTel);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", createId=").append(createId);
