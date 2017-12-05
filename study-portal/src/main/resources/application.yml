@@ -9,19 +9,27 @@ spring:
     mode: HTML5
     encoding: UTF-8
     cache: false
-  jpa:
-    show-sql: true
-    database: mysql
-logging:
-  path: e:\log\mylog
+#  jpa:
+#    show-sql: true
+#    database: mysql
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.xmf.entity
+  configuration:
+    cache-enabled: true
+    use-generated-keys: true
+    default-executor-type: reuse
+    lazy-loading-enabled: true
+    default-statement-timeout: 25000
+#    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
 ---
 spring:
     profiles: dev
     datasource:
        type: com.alibaba.druid.pool.DruidDataSource
-       url: jdbc:mysql://118.31.79.89:3306/student?characterEncoding=utf-8
+       url: jdbc:mysql://localhost:3306/student?characterEncoding=utf-8
        username: root
-       password: admin_123456
+       password:
        driver-class-name: com.mysql.jdbc.Driver
        # 初始化大小，最小，最大
        druid:
@@ -30,11 +38,9 @@ spring:
           max-active: 20
           max-wait: 60000
 
+
 server:
   port: 8080
-mybatis:
-  type-aliases-package: com.xmf.entity
-  mapper-locations: classpath:mapping/*.xml
 ---
 spring:
     profiles: prod

@@ -1,0 +1,8 @@
+2017-12-04 17:18:57,496 INFO o.s.b.StartupInfoLogger [main] Starting StudyPortalApplication on DESKTOP-UCH9DVS with PID 19208 (E:\springbootpj\studySystem\study-portal\target\classes started by dell in E:\springbootpj\studySystem)
+2017-12-04 17:18:57,501 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+2017-12-04 17:18:57,501 INFO o.s.b.SpringApplication [main] The following profiles are active: dev
+2017-12-04 17:19:05,233 INFO o.s.b.StartupInfoLogger [main] Started StudyPortalApplication in 8.476 seconds (JVM running for 9.367)
+2017-12-04 17:19:13,774 DEBUG c.x.c.LoggerController [http-nio-8080-exec-1] This is a debug message
+2017-12-04 17:19:13,775 INFO c.x.c.LoggerController [http-nio-8080-exec-1] This is an info message
+2017-12-04 17:19:13,783 WARN c.x.c.LoggerController [http-nio-8080-exec-1] This is a warn message
+2017-12-04 17:19:13,784 ERROR c.x.c.LoggerController [http-nio-8080-exec-1] This is an error message
